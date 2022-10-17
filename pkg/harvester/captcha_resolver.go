@@ -9,7 +9,7 @@ import (
 	m "github.com/drabadan/gostealthclient/pkg/model"
 )
 
-func findUniqueCaptchaElem(pics []m.TilePic) m.TilePic {
+func FindUniqueCaptchaElem(pics []m.TilePic) m.TilePic {
 	var sum int
 	for _, p := range pics {
 		sum += int(p.Id)
@@ -52,7 +52,7 @@ func ResolveCaptchaIfPresent() {
 					log.Println("Antimacro captcha present...")
 					log.Printf("Gump tilepics: %v", gi.ExtInfo.TilePic)
 
-					p := findUniqueCaptchaElem(gi.ExtInfo.TilePic)
+					p := FindUniqueCaptchaElem(gi.ExtInfo.TilePic)
 					for _, gb := range gi.ExtInfo.GumpButtons {
 						if gb.ElemNum == p.ElemNum+1 {
 							<-sc.NumGumpButton(uint16(i), gb.ReturnValue)
