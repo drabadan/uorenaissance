@@ -48,6 +48,8 @@ func (q *scriptActionsQueue) Next() {
 	} else if len(q.lowPrioActions) > 0 {
 		a = q.lowPrioActions[len(q.lowPrioActions)-1]
 		q.lowPrioActions = q.lowPrioActions[:len(q.lowPrioActions)-1]
+	} else {
+		time.Sleep(1 * time.Second)
 	}
 
 	a.Execute()
