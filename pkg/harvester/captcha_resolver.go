@@ -68,5 +68,7 @@ func ResolveCaptchaIfPresent() {
 		time.Sleep(time.Second * 2)
 	}
 
-	log.Println("No gumps present, proceeding...")
+	if DEBUG {
+		log.Println("No gumps present, proceeding...")
+	}
 }

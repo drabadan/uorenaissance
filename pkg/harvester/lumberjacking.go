@@ -77,7 +77,9 @@ func Lumberjacking(waypoints []m.Point2D, afterTree func(m.FoundTile)) interface
 			ft := <-sc.GetStaticTilesArray(x-searchDist, y-searchDist, x+searchDist, y+searchDist, <-sc.WorldNum(), TREE_TILES)
 
 			if len(ft) == 0 {
-				log.Println("Tree tiles not found, next waypoint")
+				if DEBUG {
+					log.Println("Tree tiles not found, next waypoint")
+				}
 				time.Sleep(3 * time.Second)
 				continue
 			}
@@ -101,11 +103,15 @@ func Lumberjacking(waypoints []m.Point2D, afterTree func(m.FoundTile)) interface
 					for i := 0; i < 100; i++ {
 						time.Sleep(100 * time.Millisecond)
 						if <-sc.InJournalBetweenTimes(LUMBERJACKING_MESSAGES["RETRY"], tb, time.Now()) > -1 {
-							log.Printf("Next tree due to: %v", <-sc.LastJournalMessage())
+							if DEBUG {
+								log.Printf("Next tree due to: %v", <-sc.LastJournalMessage())
+							}
 							break nextTree
 						}
 						if <-sc.InJournalBetweenTimes(LUMBERJACKING_MESSAGES["BREAK"], tb, time.Now()) > -1 {
-							log.Printf("Retry tree due to: %v", <-sc.LastJournalMessage())
+							if DEBUG {
+								log.Printf("Retry tree due to: %v", <-sc.LastJournalMessage())
+							}
 							break retryTree
 						}
 					}

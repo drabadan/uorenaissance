@@ -2,6 +2,7 @@ package harvester
 
 import m "github.com/drabadan/gostealthclient/pkg/model"
 
+const DEBUG = false
 const UNLOAD_BAG_BANK = 0x4260ACE3
 const AXE_TYPE = 0xF43
 const SEARCH_TREES_RANGE = 16
