@@ -1,9 +1,6 @@
 package main
 
 import (
-
-	// stealth client alias
-
 	"log"
 
 	sc "github.com/drabadan/gostealthclient"

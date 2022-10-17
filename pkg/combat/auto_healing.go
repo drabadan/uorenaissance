@@ -73,7 +73,7 @@ func autoHealing(targets []uint32, approach bool) {
 
 func AutoHealing() interface{} {
 	self := <-sc.Self()
-	targets := []uint32{BONDED_FOREST_OSTARD, self, 0x171354, 0x172033}
+	targets := []uint32{BONDED_FOREST_OSTARD, self}
 	autoHealing(targets, false)
 	return nil
 }
