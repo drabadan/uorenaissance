@@ -12,3 +12,5 @@ var LUMBERJACKING_MESSAGES = map[string]string{
 	"RETRY": "put some|hack at the tree for a",
 	"BREAK": "too far away|not enough wood here to harves|can't use an axe on that",
 }
+
+var COTTON_BUSH_TYPES = []uint16{0xc54, 0xc53, 0xc52, 0xc51}
