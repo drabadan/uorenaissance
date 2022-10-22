@@ -8,9 +8,24 @@ var TREE_TILES = []uint16{
 	0x0D01, 0x12B6, 0x12B7, 0x12B8, 0x12B9, 0x12BA, 0x12BB, 0x12BC, 0x12BD,
 }
 
+var MINING_TILES = []uint16{
+	1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358,
+}
+
 var LUMBERJACKING_MESSAGES = map[string]string{
 	"RETRY": "put some|hack at the tree for a",
 	"BREAK": "too far away|not enough wood here to harves|can't use an axe on that",
 }
 
+var MINING_MESSAGES = map[string]string{
+	"RETRY": "ore and put it|loosen some rocks but fail",
+	"BREAK": "too far away|no metal here to|can't mine there",
+}
+
 var COTTON_BUSH_TYPES = []uint16{0xc54, 0xc53, 0xc52, 0xc51}
+var ORE_TYPES = []uint16{0x19BA, 0x19B9, 0x19B8, 0x19B7}
+
+const INGOT_TYPE = 0x1BF2
+const AXE_TYPE = 0xF43
+const LOGS_TYPE = 0x1BDD
+const PICAXE_TYPE = 0x0E86
