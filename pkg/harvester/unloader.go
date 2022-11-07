@@ -54,7 +54,6 @@ func (u chestUnloader) unload() {
 			log.Fatal("[CRITICAL] Weight has not changed after moving item")
 		}
 	}
-
 	<-sc.FindTypeEx(u.t, 0xFFFF, u.c, true)
 	log.Printf("Unload completed, quantity in target container: %v", <-sc.FindFullQuantity())
 }
